@@ -134,6 +134,15 @@
     <Content Include="StaticFiles\dataSource.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="StaticFiles\ExplanationImages\photo1.png" />
+    <Content Include="StaticFiles\ExplanationImages\photo2.png" />
+    <Content Include="StaticFiles\ExplanationImages\photo3.png" />
+    <Content Include="StaticFiles\ExplanationImages\photo4.png" />
+    <Content Include="StaticFiles\ExplanationImages\photo5.png" />
+    <Content Include="StaticFiles\ExplanationImages\photo6.png" />
+    <Content Include="StaticFiles\ExplanationImages\photo7.png" />
+    <Content Include="StaticFiles\ExplanationImages\photo8.png" />
+    <Content Include="StaticFiles\ExplanationImages\photo9.png" />
     <Content Include="StaticFiles\sampleFile1.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
