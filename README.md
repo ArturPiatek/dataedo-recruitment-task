@@ -97,4 +97,17 @@ W celu zwiększenia wydajności tam gdzie to możliwe zostały usunięte zbędne
 
 W miejscach w których wykonywane są operacje na typie string, został wykorzystany StringBuilder.
 
-W metodzie **MatchAndUpdate** została wykorzystana pętla **Paraller.ForEach**. Dzięki temu w przypadku większego zbioru danych uzyskujemy skrócenie czasu wykonywania. W przypadku mniejszych zbiorów danych skrócenie czasu jest stosunkowo niew
+W metodzie **MatchAndUpdate** została wykorzystana pętla **Paraller.ForEach**. Dzięki temu w przypadku większego zbioru danych uzyskujemy skrócenie czasu wykonywania. W przypadku mniejszych zbiorów danych skrócenie czasu jest stosunkowo niewielkie.
+
+### Czytelność kodu
+
+1. Główne metody zostały wyciągnięte do swoich własnych klas,
+2. Część kodu odpowiedzialna za wypisywanie struktury w konsoli została rozbita na:
+    1. Formatter - odpowiedzialny za sformatowanie obiektu i przygotowanie go do wypisania w konsoli,
+    2. Write - odpowiedzialny za wypisanie obiektu w konsoli.
+3. Klasy zostały pogrupowane i umieszczone w odpowiednich folderach.
+
+## 5. Dodatkowe informacje
+
+1. W przypadku pliku **sampleFile1.csv** logger wypisuje bardzo dużo obiektów, nie jestem pewny z czego to wynika, ale zakładam, że gdzieś popełniłem błąd, którego nie widzę. W takim wypadku potrzebowałbym więcej informacji o tym jak dokładnie ma działać algorytm i na takiej podstawie mógłbym spróbować znaleźć przyczynę problemu oraz zweryfikować czy także w przypadku pozostałych plików wszystko działa tak jak powinno.
+2. Ze względu na ograniczenia logowania do konsoli nie są wypisywane wszystkie błędy w przypadku pliku **sampleFile1.csv**, natomiast infrastruktura do logowania jest już przygotowana. W przypadku konieczności logowania do pliku lub wykorzystania bardziej rozbudowanego systemu wystarczy wpiąć się w przygotowaną metodę odpowiednim providerem i wykonać logowanie.
