@@ -135,6 +135,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="StaticFiles\ExplanationImages\photo1.png" />
+    <Content Include="StaticFiles\ExplanationImages\photo10.png" />
     <Content Include="StaticFiles\ExplanationImages\photo2.png" />
     <Content Include="StaticFiles\ExplanationImages\photo3.png" />
     <Content Include="StaticFiles\ExplanationImages\photo4.png" />
