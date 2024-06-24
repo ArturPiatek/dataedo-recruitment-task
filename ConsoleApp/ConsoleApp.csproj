@@ -143,7 +143,6 @@
     <Content Include="StaticFiles\ExplanationImages\photo6.png" />
     <Content Include="StaticFiles\ExplanationImages\photo7.png" />
     <Content Include="StaticFiles\ExplanationImages\photo8.png" />
-    <Content Include="StaticFiles\ExplanationImages\photo9.png" />
     <Content Include="StaticFiles\sampleFile1.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
