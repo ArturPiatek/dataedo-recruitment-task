@@ -8,25 +8,25 @@ Błędy z przetworzeniem plików wynikały z różnic w strukturze nagłówków.
 
 #### SampleFile1.csv
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/07952285-5203-435f-bb63-a39fe2b39780/017935d3-67d3-4d6e-bd62-d88f6ac063fe/Untitled.png)
+![Untitled](https://github.com/ArturPiatek/dataedo-recruitment-task/blob/main/ConsoleApp/StaticFiles/ExplanationImages/photo1.png)
 
 #### SampleFile2.csv
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/07952285-5203-435f-bb63-a39fe2b39780/21b9732a-9907-4450-afc5-636fd63d588a/Untitled.png)
+![Untitled](https://github.com/ArturPiatek/dataedo-recruitment-task/blob/main/ConsoleApp/StaticFiles/ExplanationImages/photo2.png)
 
 #### SampleFile3.csv
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/07952285-5203-435f-bb63-a39fe2b39780/483acaf2-4bcf-48e5-ac66-720600979c52/Untitled.png)
+![Untitled](https://github.com/ArturPiatek/dataedo-recruitment-task/blob/main/ConsoleApp/StaticFiles/ExplanationImages/photo3.png)
 
 ### Rozwiązanie problemu
 
 Metoda **ExtractHeader** dodaje elementy do słownika **Header**, który przechowuje obiekty w postaci **<string, sbyte>**, gdzie **string** jest nazwą atrybutu np. **Name**, a **sbyte** jest indeksem tego atrybutu (kolejnością w jakiej występuje w pliku **.csv**).
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/07952285-5203-435f-bb63-a39fe2b39780/341245dc-6c54-417b-9e37-b4e2e3b4ac67/Untitled.png)
+![Untitled](https://github.com/ArturPiatek/dataedo-recruitment-task/blob/main/ConsoleApp/StaticFiles/ExplanationImages/photo4.png)
 
 Metoda **GetValue**, na podstawie nazwy atrybutu pobiera jego indeks ze słownika **Header** i na podstawie indeksu pobiera odpowiednią wartość atrybutu. Dzięki temu import wartości staje się niezależny od kolejności atrybutów i odpowiadających im wartości w pliku.
 
-![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/07952285-5203-435f-bb63-a39fe2b39780/1804066f-6609-46dc-87cd-e682421943c4/Untitled.png)
+![Untitled](https://github.com/ArturPiatek/dataedo-recruitment-task/blob/main/ConsoleApp/StaticFiles/ExplanationImages/photo5.png)
 
 ## 2. Poprawa wyświetlania obiektów
 
@@ -53,15 +53,15 @@ Nie udało mi się poprawnie zidentyfikować źródła tego problemu. Nie jestem
 
 1. Metoda odpowiedzialna za oczyszczanie usuwa spacje z nazw wieloczłonowych, przez co nie udaje się dopasować obiektu z pliku **dataSource.csv**. Usuwanie spacji zostało usunięte.
 
-Photo
+![Untitled](https://github.com/ArturPiatek/dataedo-recruitment-task/blob/main/ConsoleApp/StaticFiles/ExplanationImages/photo6.png)
 
 2. Podczas ładowania danych z pliku **dataSource.csv** do właściwości **ParentId** przypisywana jest wartość **1** w przypadku kiedy wartość ta w pliku jest pusta. Zamiast przypisywania wartości **1**, domyślnie będzie przypisywana wartość **default** czyli w przypadku typu **int** - 0.
 
-Photo
+![Untitled](https://github.com/ArturPiatek/dataedo-recruitment-task/blob/main/ConsoleApp/StaticFiles/ExplanationImages/photo7.png)
 
 3. Metoda **MatchAndUpdate** wykorzystuje **FirstOrDefault** do pobrania pasującego obiektu z pliku **dataSource.csv**. W niektórych sytuacjach w pliku **dataSource.csv** może jednak znajdować się więcej niż jeden obiekt z takimi samymi **Type**, **Name** i **Schema**.
 
-Photo
+![Untitled](https://github.com/ArturPiatek/dataedo-recruitment-task/blob/main/ConsoleApp/StaticFiles/ExplanationImages/photo8.png)
 
 Program został zmodyfikowany w taki sposób, aby pobierać wszystkie pasujące obiekty z pliku **dataSource.csv**. W przypadku kiedy zostanie znalezione więcej niż jedno dopasowanie, wybierane jest to, które posiada takiego samego rodzica jak importowany obiekt.
 
@@ -69,9 +69,9 @@ W przypadku kiedy nie uda się znaleźć dopasowania z takim samym rodzicem, war
 
 4. W plikach **sampleFileX.csv** znajdowały się obiekty o typie **GLOSSARY_ENTRY**. Obiektów o takim typie nie ma w pliku **dataSource.csv** przez co program nie znajduje dopasowania w metodzie **MatchAndUpdate**.
 
-Photo
+![Untitled](https://github.com/ArturPiatek/dataedo-recruitment-task/blob/main/ConsoleApp/StaticFiles/ExplanationImages/photo9.png)
 
-Photo
+![Untitled](https://github.com/ArturPiatek/dataedo-recruitment-task/blob/main/ConsoleApp/StaticFiles/ExplanationImages/photo10.png)
 
 ## 3. Ignorowanie błędów (logger)
 
